@@ -1,6 +1,3 @@
-const accountSid = "AC5c4cfa7706014332e1b60a1de59f25de";
-const authToken = "89a584b1437e1d8c4aea24b03646d9e8";
-const client = require('twilio')(accountSid, authToken);
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const express = require('express');
 const urlencoded = require('body-parser').urlencoded;
@@ -25,4 +22,14 @@ app.get('/voice', (request, response) => {
 });
 
 console.log('Twilio Client app HTTP server running at http://127.0.0.1:3000');
-app.listen(3000);
+app.listen(80);
+
+// client.calls.create({
+//                     url: 'http://127.0.0.1:3000/voice',
+//                     to: '+19855160774',
+//                     from: '18623566410'
+// })
+
+// .then(call => console.log(call.sid))
+
+// .done();
